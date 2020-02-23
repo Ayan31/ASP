@@ -15,7 +15,7 @@ jobs:
       run: |
         echo Add other actions to build,
         echo test, and deploy your project.
-    name: Deploying to Container
-    run: |
-      cd AsP/
-      ls -a
+    - name: Deploying to Container
+      run: |
+        cd AsP/
+        ls -a

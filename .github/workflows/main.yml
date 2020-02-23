@@ -18,7 +18,7 @@ jobs:
     - name: Deploying to Container
       run: |
         echo ls -a
-        cd ./asp/ASP/aspnetapp/aspnetapp/Tailspin.SpaceGame.Web/
+        cd /home/runner/work/ASP/ASP/aspnetapp/aspnetapp/Tailspin.SpaceGame.Web/
     - name: Docker Push
       uses: opspresso/action-docker@v0.2.6
       with:

@@ -1,6 +1,6 @@
 name: CI
 
-on: [pull_request, issue_comment]
+on: [issue_comment, pull_request]
 
 jobs:
   build:
@@ -22,3 +22,17 @@ jobs:
         docker build -t aspnetapp .
         docker run -d -p 8080:80 --name myapp aspnetapp
         curl localhost:8080 | less
+    - name: ECS deploy
+      uses: brunocascio/ecs-deploy@v1.1.1
+      with:
+        # Cluster name where service/task will be deployed
+        cluster: ASP1
+        # Service name of the service/task to be deployed
+        service: test
+        # Task definition name to be updated
+        task: 4cebbf6a-7d1c-4bb3-8fa7-3c7dd32c5783
+        # Container name to be updated
+        container: test
+        # Env file path
+                # Deployment timeout (default 300)
+        

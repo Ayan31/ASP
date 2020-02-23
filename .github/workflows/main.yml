@@ -17,5 +17,10 @@ jobs:
         echo test, and deploy your project.
     - name: Deploying to Container
       run: |
-        cd AsP/
         ls -a
+        cd ./asp/ASP/aspnetapp/aspnetapp/Tailspin.SpaceGame.Web/
+    - name: Docker Push
+      uses: opspresso/action-docker@v0.2.6
+      with:
+        # Your Docker Registry Type.
+        registry-type:  --docker

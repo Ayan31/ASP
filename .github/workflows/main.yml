@@ -19,7 +19,5 @@ jobs:
       run: |
         echo ls -a
         cd /home/runner/work/ASP/ASP/aspnetapp/aspnetapp/Tailspin.SpaceGame.Web/
-    - name: Docker Push
-      run: |
         docker build -t aspnetapp .
         docker run -d -p 8080:80 --name myapp aspnetapp

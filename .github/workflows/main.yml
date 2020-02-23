@@ -17,5 +17,8 @@ jobs:
         echo test, and deploy your project.
     - name: Deploying to Container
       run: |
-        cd AsP/
-        ls -a
+        echo ls -a
+        cd /home/runner/work/ASP/ASP/aspnetapp/aspnetapp/Tailspin.SpaceGame.Web/
+        docker build -t aspnetapp .
+        docker run -d -p 8080:80 --name myapp aspnetapp
+        curl localhost:8080 | less

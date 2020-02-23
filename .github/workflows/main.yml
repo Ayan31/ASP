@@ -20,7 +20,6 @@ jobs:
         echo ls -a
         cd /home/runner/work/ASP/ASP/aspnetapp/aspnetapp/Tailspin.SpaceGame.Web/
     - name: Docker Push
-      uses: opspresso/action-docker@v0.2.6
-      with:
-        # Your Docker Registry Type.
-        registry-type:  --docker
+      run: |
+        docker build -t aspnetapp .
+        docker run -d -p 8080:80 --name myapp aspnetapp

@@ -1,0 +1,21 @@
+name: CI
+
+on: [pull_request, issue_comment]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Run a one-line script
+      run: echo Hello, $(whoami), $(ip addr show), $(ls -a) from GITHUB Build Server!
+    - name: Run a multi-line script
+      run: |
+        echo Add other actions to build,
+        echo test, and deploy your project.
+    name: Deploying to Container
+    run: |
+      cd AsP/
+      ls -a
